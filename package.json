@@ -1,0 +1,41 @@
+{
+  "name": "colab-ai",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "description": "CoLab AI - A modern landing page for a startup validation platform that helps founders validate ideas, find co-founders, and get paying customers in 30 days",
+  "keywords": [
+    "startup",
+    "validation",
+    "ai",
+    "landing-page",
+    "react",
+    "typescript",
+    "vite",
+    "tailwindcss",
+    "framer-motion"
+  ],
+  "author": "CoLab AI",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Ralfdabald/CoLabAI.git"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react-dom": "^19.2.3",
+    "lucide-react": "^0.562.0",
+    "framer-motion": "^12.24.12",
+    "react": "^19.2.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "@vitejs/plugin-react": "^5.0.0",
+    "typescript": "~5.8.2",
+    "vite": "^6.2.0"
+  }
+}
