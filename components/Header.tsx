@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from './ui/Button';
-import { Zap } from 'lucide-react';
+import { Zap, User, LogOut } from 'lucide-react';
+import { useAuth } from '../src/context/AuthContext';
 
 interface HeaderProps {
   onOpenWaitlist: () => void;
@@ -8,6 +9,7 @@ interface HeaderProps {
 
 export const Header = ({ onOpenWaitlist }: HeaderProps) => {
   const [scrolled, setScrolled] = useState(false);
+  const { user, signInWithGoogle, signOut } = useAuth();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -53,10 +55,33 @@ export const Header = ({ onOpenWaitlist }: HeaderProps) => {
         </nav>
 
         <div className="flex items-center gap-4">
-          <button onClick={onOpenWaitlist} className="hidden sm:block text-sm font-medium text-gray-400 hover:text-white transition-colors">
-            Log in
-          </button>
-          <Button variant="primary" onClick={onOpenWaitlist}>Get Started</Button>
+          {user ? (
+            <div className="flex items-center gap-4">
+              <div className="flex items-center gap-2">
+                {user.user_metadata?.avatar_url ? (
+                  <img src={user.user_metadata.avatar_url} alt="Profile" className="w-8 h-8 rounded-full border border-zinc-700" />
+                ) : (
+                  <div className="w-8 h-8 rounded-full bg-brand-500/20 flex items-center justify-center text-brand-400">
+                    <User className="w-4 h-4" />
+                  </div>
+                )}
+                <span className="hidden sm:inline text-sm font-medium text-white">{user.user_metadata?.full_name || 'User'}</span>
+              </div>
+              <button
+                onClick={signOut}
+                className="p-2 text-zinc-400 hover:text-white hover:bg-zinc-800 rounded-md transition-colors"
+              >
+                <LogOut className="w-4 h-4" />
+              </button>
+            </div>
+          ) : (
+            <>
+              <button onClick={signInWithGoogle} className="hidden sm:block text-sm font-medium text-gray-400 hover:text-white transition-colors">
+                Log in
+              </button>
+              <Button variant="primary" onClick={onOpenWaitlist}>Get Started</Button>
+            </>
+          )}
         </div>
       </div>
     </header>
