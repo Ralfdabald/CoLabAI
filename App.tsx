@@ -6,6 +6,7 @@ import { Testimonials } from './components/Testimonials';
 import { CTA } from './components/CTA';
 import { Footer } from './components/Footer';
 import { BackgroundEffects } from './components/ui/BackgroundEffects';
+import { Pricing } from './components/Pricing';
 
 declare global {
   namespace JSX {
@@ -30,6 +31,7 @@ export default function App() {
           <Hero onOpenWaitlist={() => setIsWaitlistOpen(true)} />
           <Features />
           <Testimonials />
+          <Pricing onOpenWaitlist={() => setIsWaitlistOpen(true)} />
           <CTA onOpenWaitlist={() => setIsWaitlistOpen(true)} />
         </main>
         <Footer />
