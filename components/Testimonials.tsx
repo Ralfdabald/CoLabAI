@@ -43,15 +43,15 @@ const testimonials = [
 
 export const Testimonials = () => {
   return (
-    <section className="py-24 bg-dark-bg relative z-10 border-t border-white/5">
+    <section id="testimonials" className="py-24 bg-dark-bg relative z-10 border-t border-white/5">
       <div className="container mx-auto px-4 md:px-6">
-        
+
         <div className="text-center mb-16 max-w-3xl mx-auto">
           <div className="inline-block px-3 py-1 rounded-full bg-white/5 border border-white/10 text-brand-300 text-sm font-semibold mb-4">
             Proven Results
           </div>
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
-            We don't just talk. <br/>
+            We don't just talk. <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-300 to-white">
               We build innovators.
             </span>
@@ -77,9 +77,9 @@ export const Testimonials = () => {
                     <Star key={i} className="w-4 h-4 fill-brand-500 text-brand-500" />
                   ))}
                 </div>
-                
+
                 <Quote className="w-8 h-8 text-brand-500/20 mb-4" />
-                
+
                 <p className="text-gray-300 leading-relaxed mb-8">
                   "{testimonial.content}"
                 </p>
@@ -87,11 +87,11 @@ export const Testimonials = () => {
 
               <div className="flex items-center gap-3 pt-6 border-t border-white/5">
                 <div className="w-10 h-10 rounded-full bg-gradient-to-br from-gray-700 to-gray-800 flex items-center justify-center text-sm font-bold text-white border border-white/10">
-                    {testimonial.author.charAt(0)}
+                  {testimonial.author.charAt(0)}
                 </div>
                 <div>
-                    <div className="text-sm font-bold text-white">{testimonial.author}</div>
-                    <div className="text-xs text-brand-400">{testimonial.role}</div>
+                  <div className="text-sm font-bold text-white">{testimonial.author}</div>
+                  <div className="text-xs text-brand-400">{testimonial.role}</div>
                 </div>
               </div>
             </motion.div>
