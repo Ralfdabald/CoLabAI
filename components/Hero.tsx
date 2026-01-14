@@ -65,9 +65,12 @@ export const Hero = ({ onOpenWaitlist }: HeroProps) => {
             transition={{ delay: 0.4 }}
             className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto"
           >
-            <Button variant="primary" icon={<ArrowRight className="w-4 h-4" />} onClick={onOpenWaitlist}>
-              Start Your Sprint
-            </Button>
+            <a
+              href="/signup"
+              className="inline-flex items-center justify-center px-8 py-4 rounded-full bg-brand-500 text-white font-bold text-lg hover:bg-brand-600 transition-all shadow-lg hover:shadow-brand-500/25 gap-2"
+            >
+              Start Your Sprint <ArrowRight className="w-5 h-5" />
+            </a>
             <Button variant="secondary" icon={<PlayCircle className="w-4 h-4" />} onClick={scrollToTestimonials}>
               See Success Stories
             </Button>

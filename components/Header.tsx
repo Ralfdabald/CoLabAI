@@ -57,6 +57,12 @@ export const Header = ({ onOpenWaitlist }: HeaderProps) => {
         <div className="flex items-center gap-4">
           {user ? (
             <div className="flex items-center gap-4">
+              <a
+                href="/dashboard"
+                className="hidden sm:inline-flex items-center justify-center px-4 py-2 rounded-lg bg-brand-500 text-white font-medium hover:bg-brand-600 transition-colors"
+              >
+                Go to Dashboard
+              </a>
               <div className="flex items-center gap-2">
                 {user.user_metadata?.avatar_url ? (
                   <img src={user.user_metadata.avatar_url} alt="Profile" className="w-8 h-8 rounded-full border border-zinc-700" />
@@ -65,21 +71,26 @@ export const Header = ({ onOpenWaitlist }: HeaderProps) => {
                     <User className="w-4 h-4" />
                   </div>
                 )}
-                <span className="hidden sm:inline text-sm font-medium text-white">{user.user_metadata?.full_name || 'User'}</span>
               </div>
               <button
                 onClick={signOut}
                 className="p-2 text-zinc-400 hover:text-white hover:bg-zinc-800 rounded-md transition-colors"
+                title="Sign Out"
               >
                 <LogOut className="w-4 h-4" />
               </button>
             </div>
           ) : (
             <>
-              <button onClick={signInWithGoogle} className="hidden sm:block text-sm font-medium text-gray-400 hover:text-white transition-colors">
+              <a href="/login" className="hidden sm:block text-sm font-medium text-gray-400 hover:text-white transition-colors">
                 Log in
-              </button>
-              <Button variant="primary" onClick={onOpenWaitlist}>Get Started</Button>
+              </a>
+              <a
+                href="/signup"
+                className="inline-flex items-center justify-center px-4 py-2 rounded-lg bg-white text-zinc-900 font-bold hover:bg-gray-200 transition-colors"
+              >
+                Get Started
+              </a>
             </>
           )}
         </div>

@@ -2,11 +2,7 @@ import React from 'react';
 import { Button } from './ui/Button';
 import { Rocket, Check } from 'lucide-react';
 
-interface CTAProps {
-    onOpenWaitlist: () => void;
-}
-
-export const CTA = ({ onOpenWaitlist }: CTAProps) => {
+export const CTA = () => {
     return (
         <section className="py-24 relative overflow-hidden">
             {/* Background Gradients specific to CTA */}
@@ -34,9 +30,12 @@ export const CTA = ({ onOpenWaitlist }: CTAProps) => {
                         </p>
 
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-                            <Button variant="primary" className="w-full sm:w-auto text-lg px-8 py-4 h-14" onClick={onOpenWaitlist}>
+                            <a
+                                href="/signup"
+                                className="w-full sm:w-auto text-lg px-8 py-4 h-14 inline-flex items-center justify-center rounded-lg bg-brand-500 text-white font-bold hover:bg-brand-600 transition-colors"
+                            >
                                 Start Your 30-Day Sprint
-                            </Button>
+                            </a>
                         </div>
 
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 text-sm text-gray-500">

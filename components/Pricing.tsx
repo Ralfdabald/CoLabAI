@@ -60,7 +60,7 @@ export const Pricing = ({ onOpenWaitlist }: PricingProps) => {
                 <div className="text-center max-w-3xl mx-auto mb-16">
                     <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
                         Simple Pricing for <br />
-                        <span className="text-brand-400">Future Unicorns</span>
+                        <span className="text-brand-400">Future CEO's</span>
                     </h2>
                     <p className="text-lg text-gray-400">
                         Start for free, upgrade as you scale. No hidden fees.
@@ -72,8 +72,8 @@ export const Pricing = ({ onOpenWaitlist }: PricingProps) => {
                         <SpotlightCard
                             key={index}
                             className={`relative flex flex-col p-8 rounded-2xl border transition-all duration-300 ${plan.highlight
-                                    ? 'bg-zinc-900/80 border-brand-500/50 shadow-2xl shadow-brand-500/10'
-                                    : 'bg-dark-surface border-white/5 hover:border-brand-500/30'
+                                ? 'bg-zinc-900/80 border-brand-500/50 shadow-2xl shadow-brand-500/10'
+                                : 'bg-dark-surface border-white/5 hover:border-brand-500/30'
                                 }`}
                         >
                             {plan.badge && (
@@ -102,13 +102,14 @@ export const Pricing = ({ onOpenWaitlist }: PricingProps) => {
                                 </ul>
                             </div>
 
-                            <Button
-                                variant={plan.highlight ? 'primary' : 'secondary'}
-                                className="w-full justify-center"
-                                onClick={onOpenWaitlist}
+                            <a
+                                href="/signup"
+                                className={`w-full inline-flex items-center justify-center px-4 py-2 rounded-lg font-bold transition-all ${plan.highlight
+                                    ? 'bg-brand-500 text-white hover:bg-brand-600'
+                                    : 'bg-white/10 text-white hover:bg-white/20'}`}
                             >
                                 {plan.price === 'Free' ? 'Start for Free' : 'Get Started'}
-                            </Button>
+                            </a>
                         </SpotlightCard>
                     ))}
                 </div>
