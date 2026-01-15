@@ -10,7 +10,7 @@ export const CTA = () => {
             <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-500/50 to-transparent" />
 
             <div className="container mx-auto px-4 md:px-6 relative z-10">
-                <div className="max-w-4xl mx-auto text-center p-10 md:p-16 rounded-3xl bg-dark-surface border border-white/10 relative overflow-hidden group">
+                <div className="max-w-4xl mx-auto text-center p-6 sm:p-10 md:p-16 rounded-3xl bg-dark-surface border border-white/10 relative overflow-hidden group">
 
                     {/* Hover shine effect */}
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000" />

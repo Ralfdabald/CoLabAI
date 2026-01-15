@@ -71,7 +71,7 @@ export const Pricing = ({ onOpenWaitlist }: PricingProps) => {
                     {plans.map((plan, index) => (
                         <SpotlightCard
                             key={index}
-                            className={`relative flex flex-col p-8 rounded-2xl border transition-all duration-300 ${plan.highlight
+                            className={`relative flex flex-col p-6 sm:p-8 rounded-2xl border transition-all duration-300 ${plan.highlight
                                 ? 'bg-zinc-900/80 border-brand-500/50 shadow-2xl shadow-brand-500/10'
                                 : 'bg-dark-surface border-white/5 hover:border-brand-500/30'
                                 }`}

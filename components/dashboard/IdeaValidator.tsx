@@ -22,7 +22,7 @@ export const IdeaValidator = () => {
                     <p className="text-zinc-400">AI-powered market analysis and feasibility scoring.</p>
                 </div>
 
-                <div className="bg-dark-surface border border-white/5 p-8 rounded-2xl space-y-6">
+                <div className="bg-dark-surface border border-white/5 p-5 sm:p-8 rounded-2xl space-y-6">
                     <div>
                         <label className="block text-sm font-medium text-zinc-400 mb-2">Project Name</label>
                         <input
@@ -86,7 +86,7 @@ export const IdeaValidator = () => {
                 <Button variant="secondary" onClick={() => setStep('input')}>New Analysis</Button>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                 <ResultCard
                     title="Viability Score"
                     value="85/100"

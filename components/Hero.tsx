@@ -40,7 +40,7 @@ export const Hero = ({ onOpenWaitlist }: HeroProps) => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-5xl md:text-7xl font-bold tracking-tight text-white mb-6 leading-[1.1]"
+            className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight text-white mb-6 leading-[1.1]"
           >
             Validate Your Startup & Get <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-300 to-emerald-500">
@@ -94,18 +94,18 @@ export const Hero = ({ onOpenWaitlist }: HeroProps) => {
           </motion.div>
         </div>
 
-        {/* Floating Abstract UI Elements (Parallax) */}
-        <div className="absolute inset-0 pointer-events-none select-none">
+        {/* Stats Cards - Visible on mobile (stacked) and Desktop (floating) */}
+        <div className="mt-16 xl:mt-0 flex flex-col xl:block gap-6 items-center">
           {/* Left Card - Revenue Graph */}
           <motion.div
-            style={{ y: y1 }}
-            className="absolute top-1/4 left-[5%] md:left-[5%] w-64 p-4 bg-dark-surface/80 backdrop-blur-md border border-white/10 rounded-xl shadow-2xl hidden xl:block"
+            style={{ y: typeof window !== 'undefined' && window.innerWidth > 1280 ? y1 : 0 }}
+            className="xl:absolute xl:top-1/4 xl:left-[5%] w-full max-w-[280px] md:max-w-64 p-4 bg-dark-surface/80 backdrop-blur-md border border-white/10 rounded-xl shadow-2xl"
           >
             <div className="flex items-center justify-between mb-3">
               <span className="text-xs font-semibold text-gray-400">Monthly Revenue</span>
               <span className="text-brand-400 text-xs font-bold">+124%</span>
             </div>
-            <div className="flex items-end gap-1 h-32 w-full">
+            <div className="flex items-end gap-1 h-24 md:h-32 w-full">
               {[20, 35, 30, 50, 45, 60, 55, 80, 75, 100].map((h, i) => (
                 <div key={i} className="flex-1 bg-brand-500/20 rounded-t-sm relative group">
                   <div className={`absolute bottom-0 left-0 right-0 bg-brand-500 rounded-t-sm transition-all duration-1000`} style={{ height: `${h}%` }}></div>
@@ -116,8 +116,8 @@ export const Hero = ({ onOpenWaitlist }: HeroProps) => {
 
           {/* Right Card - Validation Status */}
           <motion.div
-            style={{ y: y2 }}
-            className="absolute bottom-1/4 right-[5%] md:right-[5%] w-72 p-4 bg-dark-surface/80 backdrop-blur-md border border-white/10 rounded-xl shadow-2xl hidden xl:block"
+            style={{ y: typeof window !== 'undefined' && window.innerWidth > 1280 ? y2 : 0 }}
+            className="xl:absolute xl:bottom-1/4 xl:right-[5%] w-full max-w-[280px] md:max-w-72 p-4 bg-dark-surface/80 backdrop-blur-md border border-white/10 rounded-xl shadow-2xl"
           >
             <div className="flex items-center gap-3 mb-4">
               <div className="h-2 w-2 rounded-full bg-brand-500 animate-pulse"></div>
