@@ -4,6 +4,9 @@ import { Navigate } from 'react-router-dom';
 import { DashboardLayout } from '../../components/dashboard/DashboardLayout';
 import { Overview } from '../../components/dashboard/Overview';
 import { IdeaValidator } from '../../components/dashboard/IdeaValidator';
+import { CommunityBlog } from '../../components/dashboard/CommunityBlog';
+import { SavedProjects } from '../../components/dashboard/SavedProjects';
+import { ProjectPlanner } from '../../components/dashboard/ProjectPlanner';
 
 export const Dashboard = () => {
     const { user, loading } = useAuth();
@@ -20,7 +23,10 @@ export const Dashboard = () => {
     return (
         <DashboardLayout activeTab={activeTab} setActiveTab={setActiveTab} user={user}>
             {activeTab === 'overview' && <Overview />}
+            {activeTab === 'projects' && <SavedProjects />}
+            {activeTab === 'planner' && <ProjectPlanner />}
             {activeTab === 'validate' && <IdeaValidator />}
+            {activeTab === 'community' && <CommunityBlog />}
             {activeTab === 'roadmap' && (
                 <div className="flex flex-col items-center justify-center h-[50vh] text-center">
                     <h3 className="text-2xl font-bold text-white mb-2">Roadmap Feature Coming Soon</h3>
